@@ -2,7 +2,9 @@ import React from 'react'
 import { confirmOrder } from '@/lib/actions'
 
 const Confirmation = async (orderId) => {
+    // console.log("FROM COMPONENT: ", orderId);
     const placeOrder = await confirmOrder(orderId)
+    // console.log("RESPONSE: ", placeOrder);
 
     return (
         <>

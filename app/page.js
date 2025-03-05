@@ -1,13 +1,25 @@
+"use client"
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import HeroBanner from "./components/HeroBanner";
 import { fetchProducts } from "@/lib/actions";
 import ProductCard from "./components/ProductCard";
 import LoadMore from "./components/LoadMore";
+import Products from "./components/Products";
 
-export default async function Home() {
+export default function Home() {
+  const [data, setData] = useState()
 
-  const data = await fetchProducts()
+  useEffect(() => {
+    const getData = async () => {
+      const res = await fetchProducts()
+      setData(res)
+    }
+    getData()
+
+  }, [])
+
 
   return (
     <div>
