@@ -2,8 +2,7 @@ import React from 'react'
 import { confirmOrder } from '@/lib/actions'
 
 const Confirmation = async (orderId) => {
-    const placeOrder = await confirmOrder(222)
-    console.log(placeOrder);
+    const placeOrder = await confirmOrder(orderId)
 
     return (
         <>
