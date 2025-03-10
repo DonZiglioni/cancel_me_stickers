@@ -29,9 +29,9 @@ export default function AddressForm() {
   const { cartItems, totalPrice, finalTotalPrice, setFinalTotalPrice, setRecipient, recipient, setOrderId, orderId } = useStateContext()
 
   const handleNext = async () => {
+
     let recObject = {
-      firstName: firstName,
-      lastName: lastName,
+      name: firstName + " " + lastName,
       address1: address1,
       address2: address2,
       city: city,
